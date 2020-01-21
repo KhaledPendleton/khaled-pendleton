@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
 
+const contentDir = 'content/blog';
+
 function parseMarkdown(markdown) {
 	const match = /---\n([\s\S]+?)\n---/.exec(markdown);
 	const content = markdown.slice(match[0].length);
@@ -20,7 +22,7 @@ function parseMarkdown(markdown) {
 }
 
 export function getPosts() {
-	const slugs = fs.readdirSync('content/blog')
+	const slugs = fs.readdirSync(contentDir)
 		.filter(file => (path.extname(file) === '.md'))
 		.map(file => file.slice(0, -3));
 
@@ -29,7 +31,7 @@ export function getPosts() {
 }
 
 export function getPost(slug) {
-	const fileName = `content/blog/${ slug }.md`;
+	const fileName = `${ contentDir }/${ slug }.md`;
 
 	if (!fs.existsSync(fileName)) {
 		// Post doesn't exist
