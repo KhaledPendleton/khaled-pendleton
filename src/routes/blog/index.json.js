@@ -7,8 +7,8 @@ export function get(req, res) {
 		const posts = getPosts()
 			.filter(post => !post.metadata.draft)
 			.map(({slug, metadata }) => ({ slug, metadata }));
-			
-		contents = posts;
+
+		contents = JSON.stringify(posts);
 	}
 
 	const headers = { 'Content-Type': 'application/json' };
