@@ -6,8 +6,8 @@ export function get(req, res) {
 	if (!contents || process.env.NODE_ENV !== 'production') {
 		const posts = getPosts()
 			.filter(post => !post.metadata.draft)
-			.map(({ slug, metadata }) => { slug, metadata });
-		
+			.map(({slug, metadata }) => ({ slug, metadata }));
+			
 		contents = posts;
 	}
 
