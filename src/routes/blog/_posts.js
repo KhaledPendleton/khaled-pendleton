@@ -27,7 +27,10 @@ export function getPosts() {
 		.map(file => file.slice(0, -3));
 
 	return slugs.map(getPost)
-		.sort((a, b) => (a.metadata.publishedOn < b.metadata.publishedOn));
+		.sort((a, b) => {
+			return (a.metadata.publishedOn < b.metadata.publishedOn) ?
+			1 : -1;
+		});
 }
 
 export function getPost(slug) {
