@@ -1,16 +1,17 @@
-import posts from './_posts.js';
+import { getPosts } from './_posts.js';
 
-const contents = JSON.stringify(posts.map(post => {
-	return {
-		title: post.title,
-		slug: post.slug
-	};
-}));
+let contents;
 
 export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+	if (!posts || process.env.NODE_ENV !== 'production') {
+		const posts = getPosts()
+			.filter(post => !post.metadata.draft)
+			.map(({ slug, metadata }) => { slug, metadata });
+		
+		contents = posts;
+	}
 
+	const headers = { 'Content-Type': 'application/json' };
+	res.writeHead(200, headers);
 	res.end(contents);
 }
