@@ -1,5 +1,23 @@
 import fs from 'fs';
 import path from 'path';
+import marked from 'marked';
+
+function parseMarkdown(markdown) {
+	const match = /---\n([\s\S]+?)\n---/.exec(markdown);
+	const content = markdown.slice(match[0].length);
+	const frontMatter = match[1];
+	const metadata = {};
+
+	frontMatter.split('\n')
+		.forEach(pair => {
+			const colonIndex = pair.indexOf(':');
+			const key = pair.slice(0, colonIndex).trim();
+			const value = pair.slice(colonIndex + 1).trim();
+			metadata[key] = value;
+		});
+
+	return Object.freeze({ metadata, content });
+}
 
 export function getPosts() {
 	const slugs = fs.readdirSync('content/blog')
@@ -7,7 +25,25 @@ export function getPosts() {
 		.map(file => file.slice(0, -3));
 
 	return slugs.map(getPost)
-		.sort((a, b) => (a.metadata.pubdate < b.metadata.pubdate));
+		.sort((a, b) => (a.metadata.publishedOn < b.metadata.publishedOn));
 }
 
-export default Object.freeze({ getPosts });
+export function getPost(slug) {
+	const fileName = `posts/${ slug }.md`;
+
+	if (!fs.existsSync(fileName)) {
+		// Post doesn't exist
+		return null;
+	}
+
+	const file = fs.readFileSync(fileName, 'utf-8');
+	const { content, metadata } = parseMarkdown(file);
+	const date = new Date(`${ metadata.publishedOn } EDT`);
+	const html = marked(content);
+
+	metadata.dateString = date.toDateString();
+
+	return Object.freeze({ slug, metadata, html });
+}
+
+export default Object.freeze({ getPosts, getPost });
