@@ -3,7 +3,7 @@ import { getPosts } from './_posts.js';
 let contents;
 
 export function get(req, res) {
-	if (!posts || process.env.NODE_ENV !== 'production') {
+	if (!contents || process.env.NODE_ENV !== 'production') {
 		const posts = getPosts()
 			.filter(post => !post.metadata.draft)
 			.map(({ slug, metadata }) => { slug, metadata });
