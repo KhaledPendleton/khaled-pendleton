@@ -29,7 +29,7 @@ export function getPosts() {
 }
 
 export function getPost(slug) {
-	const fileName = `posts/${ slug }.md`;
+	const fileName = `content/blog/${ slug }.md`;
 
 	if (!fs.existsSync(fileName)) {
 		// Post doesn't exist
