@@ -136,3 +136,8 @@ button:not(:disabled),
     padding: 0;
     border-style: none;
 }
+
+#app-root {
+    width: 100vw;
+    height: 100vh;
+}
