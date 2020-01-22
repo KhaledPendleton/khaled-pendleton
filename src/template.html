@@ -9,8 +9,19 @@
 	%sapper.base%
 
 	<link rel='stylesheet' href='reset.css'>
+	<link rel="stylesheet" href="global.css">
 	<link rel='manifest' href='manifest.json'>
 	<link rel='icon' type='image/png' href='favicon.png'>
+
+	<style>
+		#app-root {
+			/* 1. Sticky footer */
+			width: 100vw;
+			height: 100vh;
+			display: flex; /* 1. */
+			flex-direction: column; /* 1. */
+		}
+	</style>
 
 	<!-- Sapper generates a <style> tag containing critical CSS
 	     for the current page. CSS for the rest of the app is
