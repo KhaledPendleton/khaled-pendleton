@@ -1,36 +1,37 @@
 <script>
-	export let segment;
+	import SocialsList from '../components/SocialsList.svelte';
+	import Nav from '../components/Nav.svelte';
 </script>
+
+<style>
+	/* Should force sticky footer */
+	main {
+		flex: 1;
+	}
+
+	.wrapper {
+		/* 1. Centers the content. */
+		margin-right: auto; /* 1 */
+		margin-left:  auto; /* 1 */
+		padding-right: var(--spacing);
+		padding-left:  var(--spacing);
+	}
+</style>
 
 <header>
 	<div class="wrapper">
-		<div>
-			<a href=".">Khaled Pendleton</a>
-			<h1>A design-driven web developer from New York</h1>
-		</div>
+		<Nav />
 	</div>
 </header>
 
 <main>
-	<slot></slot>
+	<div class="wrapper">
+		<slot></slot>
+	</div>
 </main>
 
 <footer>
 	<div class="wrapper">
-		<div>
-			<section>
-				<h6>Social Media</h6>
-				<ul>
-					<li><a href="#">Tw</a></li>
-					<li><a href="#">Ig</a></li>
-					<li><a href="#">Gh</a></li>
-				</ul>
-			</section>
-
-			<section>
-				<h6>Email</h6>
-				<a href="mailto:hi@khaledpendleton.com">hi@khaledpendleton.com</a>
-			</section>
-		</div>
+		<SocialsList />
 	</div>
 </footer>
