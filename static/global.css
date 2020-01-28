@@ -1,3 +1,46 @@
 :root {
-    --spacing: 10px;
+    --spacing: calc(1em / 2);
+}
+
+::selection {
+    background-color: rgb(98, 127, 208);
+    color: rgb(210, 128, 111);
+}
+
+html {
+    background-color: rgb(164, 168, 179);
+    color: rgb(187, 80, 58);
+}
+
+a {
+    color: inherit;
+    text-transform: uppercase;
+}
+
+a:hover {
+    font-style: italic;
+    text-decoration: none;
+}
+
+.box {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+.title {
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.atf .title {
+    font-weight: 300;
+	font-size: 1.75em;
+}
+
+@media screen and (min-width: 550px) {
+    .atf .title {
+        font-size: 4em;
+        text-align: center;
+    }
 }
