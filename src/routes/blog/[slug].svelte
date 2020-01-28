@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>KHALED PENDLETON | { post.metadata.title.toUpperCase() }</title>
+</svelte:head>
+
 <script context="module">
 	export async function preload({ params, query }) {
 		const response = await this.fetch(`blog/${ params.slug }.json`);
@@ -15,12 +19,10 @@
 	export let post;
 </script>
 
-<svelte:head>
-	<title>{ post.metadata.title }</title>
-</svelte:head>
+<header class="atf box">
+	<h1 class="title">{ post.metadata.title }</h1>
+</header>
 
-<h1>{ post.metadata.title }</h1>
-
-<div class='content'>
+<section class='box'>
 	{ @html post.html }
-</div>
+</section>

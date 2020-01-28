@@ -1,17 +1,44 @@
 <style>
     nav {
 		display: flex;
-		justify-content: space-between;
-		padding-top: var(--spacing);
-		padding-bottom: var(--spacing);
+        justify-content: space-between;
     }
     
     a {
         color: inherit;
     }
+
+    .large-screen {
+        display: none;
+    }
+
+    @media screen and (min-width: 500px) {
+        .small-screen {
+            display: none;
+        }
+
+        .large-screen {
+            display: initial;
+        }
+    }
 </style>
 
-<nav>
-    <a href=".">Khaled Pendleton</a>
-    <a href="mailto:hi@khaledpendleton.com">Contact</a>
+<nav class="box">
+    <a href="https://twitter.com/khaledpendleton">
+        <span class="small-screen">Tw</span>
+        <span class="large-screen">Twitter</span>
+    </a>
+    <a href="https://instagram.com/khaledpendleton">
+        <span class="small-screen">Ig</span>
+        <span class="large-screen">Instagram</span>
+    </a>
+    <a href=".">KP</a>
+    <a href="https://github.com/khaledpendleton">
+        <span class="small-screen">Gh</span>
+        <span class="large-screen">Github</span>
+    </a>
+    <a href="mailto:hi@khaledpendleton.com">
+        <span class="small-screen">Em</span>
+        <span class="large-screen">Email</span>
+    </a>
 </nav>
