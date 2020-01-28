@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "khaled-pendleton",
+  "description": "My personal website.",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
