@@ -7,7 +7,9 @@ export function get(req, res, next) {
     
     if (process.env.NODE_ENV !== 'production' || !cache.has(slug)) {
         const post = getPost(slug);
-        cache.set(slug, JSON.stringify(post));
+        if (post) {
+            cache.set(slug, JSON.stringify(post));
+        }
     }
 
     const headers = { 'Content-Type': 'application/json' };
