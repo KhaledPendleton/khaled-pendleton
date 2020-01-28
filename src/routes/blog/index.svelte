@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>KHALED PENDLETON | BLOG</title>
+</svelte:head>
+
 <script context="module">
 	export async function preload({ params, query }) {
 		const response = await this.fetch(`blog.json`);
@@ -7,21 +11,10 @@
 </script>
 
 <script>
+	import ContentList from '../../components/ContentList.svelte';
 	export let posts;
 </script>
 
-<svelte:head>
-	<title>Blog | Khaled Pendleton</title>
-</svelte:head>
-
-<h1>Recent posts</h1>
-
-<ul>
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-		<li><a rel='prefetch' href='blog/{post.slug}'>{ post.metadata.title }</a></li>
-	{/each}
-</ul>
+<section class="box">
+	<ContentList content={posts}>Blog Posts</ContentList>
+</section>
