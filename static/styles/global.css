@@ -23,8 +23,8 @@ a:hover {
 }
 
 .box {
-    padding-top: var(--spacing);
-    padding-bottom: var(--spacing);
+    padding-top: calc(var(--spacing) * 1.5);
+    padding-bottom: calc(var(--spacing) * 1.5);
 }
 
 .title {
