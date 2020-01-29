@@ -19,10 +19,27 @@
 	export let post;
 </script>
 
+<style>
+	@media screen and (min-width: 400px) {
+		article {
+			font-size: 1.25em;
+			font-weight: 300;
+		}
+	}
+
+	@media screen and (min-width: 550px) {
+		article {
+			font-size: 1.75em;
+		}
+	}
+</style>
+
 <header class="atf box">
 	<h1 class="title">{ post.metadata.title }</h1>
 </header>
 
 <section class='box'>
-	{ @html post.html }
+	<article>
+		{ @html post.html }
+	</article>
 </section>
