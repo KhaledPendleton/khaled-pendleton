@@ -1,5 +1,11 @@
 <svelte:head>
-	<title>KHALED PENDLETON | { post.metadata.title.toUpperCase() }</title>
+	<title>{ page.title }</title>
+	<meta name="description" content="{ page.description }">
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="{ page.title }">
+	<meta property=”og:type” content=”blog”>
+	<meta property="og:description" content="{ page.description }">
+	<meta property=”og:image” content="{ page.thumbnail.src }">
 </svelte:head>
 
 <script context="module">
@@ -18,6 +24,15 @@
 <script>
 	import Thumbnail from '../../components/Thumbnail.svelte';
 	export let post;
+
+	const page = {
+		title: `KHALED PENDLETON | ${ post.metadata.title.toUpperCase() }`,
+		description: post.metadata.description || 'A description-less blog post.',
+		thumbnail: {
+			src: `images/${ post.metadata.thumbnail }`,
+			alt: post.metadata.caption
+		}
+	}
 </script>
 
 <style>
@@ -43,7 +58,7 @@
 	{#if post.metadata.thumbnail }
 		<Thumbnail
 			src="images/{ post.metadata.thumbnail }"
-			alt="{ post.metadata['thumbnail-alt'] }"
+			alt="{ post.metadata.caption }"
 		/>
 	{/if}
 	<h1 class="title">{ post.metadata.title }</h1>
