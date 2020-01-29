@@ -34,11 +34,13 @@
 	}
 </style>
 
-<ul class="content-list">
-    <p class="title">
-        <slot>Untitled List</slot>
-    </p>
-    {#each content as item}
-        <li><a rel='prefetch' href='blog/{item.slug}'>{ item.metadata.title }</a></li>
-    {/each}
-</ul>
+{#if content.length > 0}
+	<ul class="content-list">
+		<p class="title">
+			<slot>Untitled List</slot>
+		</p>
+		{#each content as item}
+			<li><a rel='prefetch' href='blog/{item.slug}'>{ item.metadata.title }</a></li>
+		{/each}
+	</ul>
+{/if}
