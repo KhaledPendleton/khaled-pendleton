@@ -13,7 +13,9 @@
 		font-family: monospace;
 		font-size: 1.2em;
 		font-weight: 400;
-		border: 2px solid var(--dark-blue);
+		background-color: var(--dark-blue);
+		border: 2px solid var(--white);
+		color: var(--white);
 		line-height: 1.75em;
 	}
 
