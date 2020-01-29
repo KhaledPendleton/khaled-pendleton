@@ -6,35 +6,36 @@
 </script>
 
 <style>
-	h1, p {
-		margin: 0 auto;
+	pre {
+		margin: auto;
+		padding-right: var(--spacing);
+		padding-left:  var(--spacing);
+		font-family: monospace;
+		font-size: 1.2em;
+		font-weight: 400;
+		border: 2px solid var(--dark-blue);
+		line-height: 1.75em;
 	}
 
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+	.center {
+		text-align: center;
 	}
 </style>
 
 <svelte:head>
-	<title>{status}</title>
+	<title>{ status }: { error.message.toUpperCase() }</title>
 </svelte:head>
 
-<h1>{status}</h1>
-
-<p>{error.message}</p>
+<header class="atf box">
+	<h1 class="title">{ status }: { error.message }</h1>
+</header>
 
 {#if dev && error.stack}
-	<pre>{error.stack}</pre>
+	<section class="box">
+		<pre class="box">{error.stack}</pre>
+	</section>
 {/if}
+
+<section class="box center">
+	<a href=".">Take me home</a>
+</section>
