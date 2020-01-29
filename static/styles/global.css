@@ -1,15 +1,21 @@
 :root {
     --spacing: calc(1em / 2);
+
+    --dark-orange: rgb(187, 80, 58);
+    --light-orange: rgb(210, 128, 111);
+
+    --dark-blue: rgb(98, 127, 208);
+    --light-blue: rgb(164, 168, 179);
 }
 
 ::selection {
-    background-color: rgb(98, 127, 208);
-    color: rgb(210, 128, 111);
+    background-color: var(--dark-blue);
+    color: var(--light-orange);
 }
 
 html {
-    background-color: rgb(164, 168, 179);
-    color: rgb(187, 80, 58);
+    background-color: var(--light-blue);
+    color: var(--dark-orange);
 }
 
 a {
