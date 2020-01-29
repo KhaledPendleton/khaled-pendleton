@@ -4,15 +4,20 @@
 
 <script context="module">
 	export async function preload({ params, query }) {
-		const response = await this.fetch(`blog.json`);
-		const posts = await response.json();
-		return { posts };
+		const postsResponse = await this.fetch('blog.json');
+		const posts = await postsResponse.json();
+
+		const projectsResponse = await this.fetch('portfolio.json');
+		const projects = await projectsResponse.json();
+		
+		return { posts, projects };
 	}
 </script>
 
 <script>
 	import ContentList from '../components/ContentList.svelte';
 	export let posts;
+	export let projects;
 </script>
 
 <section class="box atf">
@@ -24,5 +29,5 @@
 </section>
 
 <section class="box">
-	<ContentList content={posts}>Projects</ContentList>
+	<ContentList content={projects}>Projects</ContentList>
 </section>
