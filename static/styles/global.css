@@ -22,8 +22,13 @@ a {
     text-transform: uppercase;
 }
 
+@media (hover: hover) {
+    a:hover {
+        font-style: italic;
+    }
+}
+
 a:hover {
-    font-style: italic;
     text-decoration: none;
 }
 
