@@ -3,7 +3,7 @@ const ghPages = require('gh-pages');
 const directory = '__sapper__/export/';
 const options = {
     branch: 'gh-pages',
-    repo: 'https://khaledpendleton.github.io/khaled-pendleton/',
+    repo: 'https://github.com/KhaledPendleton/khaled-pendleton',
     message: generateCommitMessage(),
     user: {
         name: 'Khaled Pendleton',
