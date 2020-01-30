@@ -24,20 +24,20 @@
 </style>
 
 <nav class="box">
-    <a href="https://twitter.com/khaledpendleton">
+    <a href="https://twitter.com/khaledpendleton" target="_blank">
         <span class="small-screen">Tw</span>
         <span class="large-screen">Twitter</span>
     </a>
-    <a href="https://instagram.com/khaledpendleton">
+    <a href="https://instagram.com/khaledpendleton" target="_blank">
         <span class="small-screen">Ig</span>
         <span class="large-screen">Instagram</span>
     </a>
     <a href=".">KP</a>
-    <a href="https://github.com/khaledpendleton">
+    <a href="https://github.com/khaledpendleton" target="_blank">
         <span class="small-screen">Gh</span>
         <span class="large-screen">Github</span>
     </a>
-    <a href="mailto:hi@khaledpendleton.com">
+    <a href="mailto:hi@khaledpendleton.com" target="_blank">
         <span class="small-screen">Em</span>
         <span class="large-screen">Email</span>
     </a>
