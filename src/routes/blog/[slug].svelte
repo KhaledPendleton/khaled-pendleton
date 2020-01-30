@@ -38,6 +38,7 @@
 <style>
 	.date {
 		text-transform: uppercase;
+		margin-bottom: 0;
 	}
 
 	@media screen and (min-width: 400px) {
