@@ -32,6 +32,11 @@ a:hover {
     text-decoration: none;
 }
 
+#app-root {
+    max-width: 1400px;
+    margin: auto;
+}
+
 .box {
     padding-top: calc(var(--spacing) * 1.5);
     padding-bottom: calc(var(--spacing) * 1.5);
