@@ -31,6 +31,10 @@
 			display: inline-block;
 			margin-right: 1em;
 		}
+
+		.content-list li:last-child {
+			margin-right: 0;
+		}
 	}
 </style>
 
