@@ -1,9 +1,9 @@
 :root {
     --spacing: calc(1em / 2);
 
-    --light-blue: rgb(223,232,246);
+    --light-blue: rgb(231, 235, 240);
     --dark-blue: rgb(62,104,169);
-    --dark-orange: rgb(171,48,23);
+    --dark-orange: rgb(141, 41, 20);
     --white: #fff;
 }
 
@@ -30,6 +30,11 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+#app-root {
+    max-width: 1400px;
+    margin: auto;
 }
 
 .box {
