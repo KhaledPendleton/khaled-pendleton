@@ -3,9 +3,9 @@
 	<meta name="description" content="{ page.description }">
 	<!-- Open Graph tags -->
 	<meta property="og:title" content="{ page.title }">
-	<meta property=”og:type” content=”blog”>
+	<meta property="og:type" content="blog">
 	<meta property="og:description" content="{ page.description }">
-	<meta property=”og:image” content="https://khaledpendleton.com/{ page.thumbnail.src }">
+	<meta property="og:image" content="https://khaledpendleton.com/{ page.thumbnail.src }">
 </svelte:head>
 
 <script context="module">
