@@ -4,6 +4,7 @@
 	<!-- Open Graph tags -->
 	<meta property="og:title" content="{ page.title }">
 	<meta property="og:type" content="blog">
+	<meta property="og:url" content="{ page.url }">
 	<meta property="og:description" content="{ page.description }">
 	<meta property="og:image" content="https://khaledpendleton.com/{ page.thumbnail.src }">
 </svelte:head>
@@ -28,6 +29,7 @@
 	const page = {
 		title: `KHALED PENDLETON | ${ post.metadata.title.toUpperCase() }`,
 		description: post.metadata.description || 'A description-less blog post.',
+		url: `https://khaledpendleton.com/blog/${post.slug}`,
 		thumbnail: {
 			src: `images/${ post.metadata.thumbnail }`,
 			alt: post.metadata.caption
