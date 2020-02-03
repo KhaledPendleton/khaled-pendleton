@@ -2,13 +2,13 @@
 	<title>KHALED PENDLETON</title>
 	<meta
 		name="description"
-		content="Explore the world of Khaled Pendleton, featuring blog posts, social media, and past projects."
+		content="A New York based digital creative, specializing in web and mobile applications development, and typographic print design."
 	>
 	<!-- Open Graph tags -->
 	<meta property="og:title" content="Khaled Pendleton: A design-driven web developer">
 	<meta property="og:url" content="https://khaledpendleton.com">
 	<meta property="og:type" content="website">
-	<meta property="og:description" content="Explore the world of Khaled Pendleton, featuring blog posts, social media, and past projects.">
+	<meta property="og:description" content="A New York based digital creative, specializing in web and mobile applications development, and typographic print design.">
 	<meta property="og:image" content="https://khaledpendleton.com/images/me.jpg">
 </svelte:head>
 
