@@ -1,7 +1,7 @@
 <script>
     import { spring } from 'svelte/motion';
 
-    let coords = spring({ x: 50, y: 50 });
+    let coords = spring({ x: -100, y: -100 });
     let size = spring(15);
     
     function onMousemove(event) {
