@@ -1,4 +1,5 @@
 <script>
+	import Mouse from '../components/Mouse.svelte';
 	import Nav from '../components/Nav.svelte';
 </script>
 
@@ -16,3 +17,4 @@
 	<Nav />
 	<slot></slot>
 </div>
+<Mouse />
