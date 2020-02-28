@@ -26,9 +26,10 @@ export function getPosts() {
 		.filter(file => (path.extname(file) === '.md'))
 		.map(file => file.slice(0, -3));
 
+	// Return posts with oldest first
 	return slugs.map(getPost)
 		.sort((a, b) => {
-			return (a.metadata.publishedOn < b.metadata.publishedOn) ?
+			return (a.metadata.publishedOn > b.metadata.publishedOn) ?
 			1 : -1;
 		});
 }
